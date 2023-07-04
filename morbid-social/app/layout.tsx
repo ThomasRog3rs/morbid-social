@@ -1,6 +1,8 @@
-import "./globals.css";
+'use client';
 import { Inter } from "next/font/google";
-import Navbar from "../components/navbar";
+import { FC, PropsWithChildren } from "react";
+import FlowbiteContext from "../context/FlowbiteContext";
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -9,17 +11,14 @@ export const metadata = {
   description: "A very morbid social media",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+const RootLayout: FC<PropsWithChildren> = function ({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Navbar></Navbar>
-        <div className="px-20 py-20">{children}</div>
+      <body>
+        <FlowbiteContext>{children}</FlowbiteContext>
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

@@ -1,11 +1,12 @@
-// components/Navbar.tsx
-import React from "react";
-import Link from "next/link";
+'use client';
 
-const Navbar = () => {
+import { Dropdown, Navbar } from 'flowbite-react';
+import Avatar from '../Avatar';
+
+export default function CustomNavbar(): JSX.Element {
   return (
     <nav className="bg-white border-gray-200 dark:bg-gray-900">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <div className="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
         <a href="https://flowbite.com/" className="flex items-center">
           <img
             src="https://flowbite.com/docs/images/logo.svg"
@@ -39,7 +40,7 @@ const Navbar = () => {
           </svg>
         </button>
         <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <ul className="flex flex-col p-4 mt-4 font-medium border border-gray-100 rounded-lg md:p-0 bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li>
               <a
                 href="#"
@@ -86,5 +87,6 @@ const Navbar = () => {
       </div>
     </nav>
   );
-};
-export default Navbar;
+}
+
+
